@@ -1,0 +1,9 @@
+    <button (click)="getRequestD()">get product</button>
+    <div *ngIf="loading$ | async">جار التحميل...</div>
+    <div *ngIf="error$ | async">حدث خطأ اثناء جلب البيانات xx</div>
+
+    <div *ngIf="details$ | async as details">
+      <h2>Request Details</h2>
+      <p>Owner Name :{{ details.title }}</p> 
+      <p>Price :{{ details.price }}</p> 
+    </div>
